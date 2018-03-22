@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+
+{% block content %}
+<div class="wrapper">
+            <div class="product-img">
+              <img src="{{event.image.url}}" height="420" width="327">
+            </div>
+            <div class="product-info">
+              <div class="product-text">
+                <h1>{{event.event_name}}</h1><br>
+                <p>{{event.description}} </p>
+              </div>
+              <div class="product-price-btn">
+                <p><span>78</span>$</p>
+                <button type="button">buy now</button>
+              </div>
+            </div>
+      </div
+  <div class="container-fluid">
+  
+     </div>
+
+{% endblock %}

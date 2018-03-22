@@ -1,0 +1,85 @@
+{%extends 'base.html'%}
+
+{% block content %}
+
+<div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
+      <!--Indicators-->
+      <ol class="carousel-indicators">
+          <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-2" data-slide-to="1"></li>
+          <li data-target="#carousel-example-2" data-slide-to="2"></li>
+      </ol>
+      <!--/.Indicators-->
+      <!--Slides-->
+      <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active">
+              <div class="view hm-black-light">
+                  <img class="d-block w-100 image" src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg" alt="First slide">
+                  <div class="mask"></div>
+              </div>
+              <div class="carousel-caption">
+                  <h3 class="h3-responsive">Awesome View of Mt. Kenya</h3>
+                  <p>The mountain range offers splendid views of mighty waterfalls,stunning valleys,streams and rivers</p>
+              </div>
+          </div>
+          <div class="carousel-item">
+              <!--Mask color-->
+              <div class="view hm-black-strong">
+                  <img class="d-block w-100 image img-fluid" src="https://www.downunderendeavours.com/wp-content/uploads/2014/08/D184-hero-seychelles-constance-ephelia-resort-beach-hero-2000x837.jpg" alt="Second slide">
+                  <div class="mask"></div>
+              </div>
+              <div class="carousel-caption">
+                  <h3 class="h3-responsive">The Great Rift Valley</h3>
+                  <p>Breath-taking views of the greatest natural resources on earth and extremely rewarding safaris as it allows visitors a fast hand experience of the Great Rift Valley </p>
+              </div>
+          </div>
+          <div class="carousel-item">
+              <!--Mask color-->
+              <div class="view hm-black-slight">
+                  <img class="d-block w-100 image" src="https://www.marbletravel.com/imgs/photography/fullscreen11.jpg" alt="Third slide">
+                  <div class="mask"></div>
+              </div>
+              <div class="carousel-caption">
+                  <h3 class="h3-responsive">Safari Walk</h3>
+                  <p>In the daunting yet gentle plains of the mara eco-system</p>
+              </div>
+          </div>
+      </div>
+      <!--/.Slides-->
+      <!--Controls-->
+      <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+      </a>
+      <!--/.Controls-->
+   </div>
+   <!--/.Carousel Wrapper-->
+   <div class="container" style="padding-top:100px;">
+       <div class="row">
+            {% for event in event_list %}
+            <div class="col-sm-5" style="margin:10px">
+                  <div class="card card-image">
+                  <!--Card content-->
+                        <div class="card-body">
+                              <!--Title-->
+                              <h4 class="card-title">{{event.event_name|title}}</h4>
+                              <!--Text-->
+                              <p class="card-text">Location:{{event.location}}</p>
+                              <p class="card-text">Cost: Ksh {{event.cost}}</p>
+                              <p class="card-text">{{event.date}}</p>
+                              <a href="{% url 'events' event.id  %}" class="btn button">Book</a>
+                        </div>
+                  </div>
+            </div>
+            {% endfor %}
+      </div>
+  </div>
+  <div class="container-fluid">
+  
+     </div>
+
+{% endblock %}
